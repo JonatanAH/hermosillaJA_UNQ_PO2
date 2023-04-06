@@ -2,6 +2,8 @@ package ar.edu.unq.po2.tp2;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.time.LocalDate;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -15,11 +17,11 @@ class EmpleadoTest {
 	@BeforeEach
 	public void setUp() {
 		// El formato de fecha que se usa es "dd/MM/yyyy" ejemplo "28/01/1989".
-		empleadoPS = new EmpleadoPermanente("Julieta", "Quilmes", new Soltere(), "27/03/1970", 110, 0, 2);
-		empleadoPC = new EmpleadoPermanente("Jose", "Ezpeleta", new Casade(), "27/03/1987", 100, 2, 5);
-		empleadoT = new EmpleadoTemporal("Juan", "Berazategui", new Soltere(), "27/03/1971", 120, "10/11/2023", 10);
-		empleadoTMenor = new EmpleadoTemporal("Juancito", "Berazategui", new Soltere(), "27/03/2000", 120, "10/11/2023", 10);
-		empleadoC = new EmpleadoContratado("Luz", "Bernal", new Casade(), "27/03/1980", 130, 151515, "Paga con cuenta virtual por transferencia");
+		empleadoPS = new EmpleadoPermanente("Julieta", "Quilmes", new Soltere(), LocalDate.of(1970, 3, 27), 110, 0, 2);
+		empleadoPC = new EmpleadoPermanente("Jose", "Ezpeleta", new Casade(), LocalDate.of(1987, 3, 27), 100, 2, 5);
+		empleadoT = new EmpleadoTemporal("Juan", "Berazategui", new Soltere(), LocalDate.of(1971, 3, 27), 120, LocalDate.of(2023, 11, 10), 10);
+		empleadoTMenor = new EmpleadoTemporal("Juancito", "Berazategui", new Soltere(), LocalDate.of(2000, 3, 27), 120, LocalDate.of(2023, 11, 10), 10);
+		empleadoC = new EmpleadoContratado("Luz", "Bernal", new Casade(), LocalDate.of(1980, 3, 27), 130, 151515, "Paga con cuenta virtual por transferencia");
 	}
 	
 	@Test

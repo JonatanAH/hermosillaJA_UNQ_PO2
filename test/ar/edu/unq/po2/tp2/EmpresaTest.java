@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,11 +15,11 @@ class EmpresaTest {
 	
 	@BeforeEach
 	public void setUp() {
-		Empleado empleadoUno = new EmpleadoTemporal("Juan", "Berazategui", new Soltere(), "28/10/1970", 120, "10/11/2023", 10);
-		Empleado empleadoDos = new EmpleadoPermanente("Jose", "Ezpeleta", new Casade(), "6/04/1987", 100, 2, 5);
-		Empleado empleadoTres = new EmpleadoPermanente("Julieta", "Quilmes", new Viude(), "27/03/1970", 110, 0, 2);
-		Empleado empleadoCuatro = new EmpleadoContratado("Luz", "Bernal", new Casade(), "27/03/1980", 130, 151515, "Paga con cuenta virtual por transferencia");
-		Empleado empleadoUnoMenor = new EmpleadoTemporal("Juan", "Berazategui", new Soltere(), "28/10/2000", 120, "10/11/2023", 10);
+		Empleado empleadoUno = new EmpleadoTemporal("Juan", "Berazategui", new Soltere(), LocalDate.of(1970, 10, 28), 120, LocalDate.of(2023, 11, 10), 10);
+		Empleado empleadoDos = new EmpleadoPermanente("Jose", "Ezpeleta", new Casade(), LocalDate.of(1987, 4, 6), 100, 2, 5);
+		Empleado empleadoTres = new EmpleadoPermanente("Julieta", "Quilmes", new Viude(), LocalDate.of(1970, 3, 27), 110, 0, 2);
+		Empleado empleadoCuatro = new EmpleadoContratado("Luz", "Bernal", new Casade(), LocalDate.of(1980, 3, 27), 130, 151515, "Paga con cuenta virtual por transferencia");
+		Empleado empleadoUnoMenor = new EmpleadoTemporal("Juan", "Berazategui", new Soltere(), LocalDate.of(2000, 10, 28), 120, LocalDate.of(2023, 11, 10), 10);
 		
 		List<Empleado> listaEmpleados = new ArrayList<Empleado>();
 		listaEmpleados.add(empleadoUno);

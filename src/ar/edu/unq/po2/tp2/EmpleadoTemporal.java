@@ -1,11 +1,13 @@
 package ar.edu.unq.po2.tp2;
 
+import java.time.LocalDate;
+
 public class EmpleadoTemporal extends Empleado {
 
-	private String fechaFinDesignacion;
+	private LocalDate fechaFinDesignacion;
 	private int horasExtras;
 	
-	EmpleadoTemporal(String nombre, String direccion, EstadoCivil estadoCivil, String fechaNacimiento, float sueldoBasico, String fechaFinDesignacion, int horasExtras) {
+	EmpleadoTemporal(String nombre, String direccion, EstadoCivil estadoCivil, LocalDate fechaNacimiento, float sueldoBasico, LocalDate fechaFinDesignacion, int horasExtras) {
 		super(nombre, direccion, estadoCivil, fechaNacimiento, sueldoBasico);
 		this.fechaFinDesignacion = fechaFinDesignacion;
 		this.horasExtras = horasExtras;

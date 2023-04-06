@@ -10,10 +10,10 @@ public abstract class Empleado {
 	// El formato de fecha que se usara sera "dd/MM/yyyy" ejemplo "28/01/1989".
 	protected EstadoCivil estadoCivil;
 	// El formato de fecha que se usara sera "dd/MM/yyyy" ejemplo "28/01/1989".
-	private String fechaNacimiento;
+	private LocalDate fechaNacimiento;
 	protected float sueldoBasico;
 	
-	Empleado(String nombre, String direccion, EstadoCivil estadoCivil, String fechaNacimiento, float sueldoBasico){
+	Empleado(String nombre, String direccion, EstadoCivil estadoCivil, LocalDate fechaNacimiento, float sueldoBasico){
 		this.nombre = nombre;
 		this.direccion = direccion;
 		this.estadoCivil = estadoCivil;
@@ -25,11 +25,9 @@ public abstract class Empleado {
 	abstract float calcularRetenciones();
 	
 	public int calcularMiEdad() {
-		DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        LocalDate nacimiento = LocalDate.parse(this.fechaNacimiento, formato);
         LocalDate actualidad = LocalDate.now();
 
-        Period periodo = Period.between(nacimiento, actualidad);
+        Period periodo = Period.between(this.fechaNacimiento, actualidad);
         return periodo.getYears();
 	}
 
